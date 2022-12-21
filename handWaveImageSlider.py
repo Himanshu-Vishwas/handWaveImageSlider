@@ -23,21 +23,21 @@ while True:
             if loc == loc_his:
                 continue
             else:
-                loc_his = loc
                 t_dif = (t.time()/0.01)- t_his
                 if t_dif <=2:
                     print("l2r")
                     p.press("right")
+                    loc_his = loc
         elif xcor>300:
             loc="right"
             if loc == loc_his:
                 continue
             else:
-                loc_his = loc
                 t_dif = (t.time()/0.01)- t_his
                 if t_dif <=2:
                     print("r2l")
                     p.press("left")
+                    loc_his = loc
         else:
             continue
         #print(xcor,loc,loc_his)
