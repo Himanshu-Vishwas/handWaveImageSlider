@@ -27,7 +27,7 @@ while True:
                     loc_his = loc
                     t_dif = (t.time()/0.01)- t_his
                     if t_dif <=2:
-                        print("l2r")
+                        print("l2r",t_dif)
                         p.press("right")
                         break
             elif xcor>300:
@@ -38,7 +38,7 @@ while True:
                     loc_his = loc
                     t_dif = (t.time()/0.01)- t_his
                     if t_dif <=2:
-                        print("r2l")
+                        print("r2l",t_dif)
                         p.press("left")
                         break
             else:
