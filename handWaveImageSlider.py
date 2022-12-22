@@ -19,17 +19,19 @@ while True:
 
         xcor = hand1["center"][0]
         #loc_his ="himanshu"
-        t_his = t.time()/0.01
-        loc_his[1] = t_his
+        t_his = t.time()
+        #loc_his[1] = t_his
         if xcor<=250:
             loc = "left"
-            t_dif = (t.time()/0.01)- t_his
+            #t_dif = (t.time()/0.01)- t_his
+            t_dif = (t.time()) - loc_his[1]
+            print(t_dif)
             if loc != loc_his[0]:
                 if t_dif <=2 and t_dif>=0.0003:
                     print("l2r",t_dif)
                     p.press("right")
                     loc_his[0] = loc
-                    loc_his[1] = t_his
+                    loc_his[1] = t.time()
             else:
                 if t_dif >2:
                     print("r2l2",t_dif)
@@ -44,7 +46,7 @@ while True:
                     print("r2l",t_dif)
                     p.press("left")
                     loc_his[0] = loc
-                    loc_his[1] = t_his
+                    loc_his[1] = t.time()
             else:
                 if t_dif >2:
                     print("l2r2",t_dif)
