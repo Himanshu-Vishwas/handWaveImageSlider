@@ -27,11 +27,11 @@ while True:
             if loc != loc_his[0]:
                 if t_dif <=0.04 and t_dif>=0.0003:
                     if loc_his[0] != "himanshu":
-                        print("l2r",t_dif)
+                        print("Right to Left")
                         p.press("right")
                     loc_his[0] = loc
                     loc_his[1] = t_his
-                print(t_dif)
+                #print(t_dif)
             else:
                 if t_dif >0.04:
                     if loc_his[0] != "himanshu":
@@ -45,7 +45,7 @@ while True:
             if loc != loc_his[0]:
                 if t_dif <=0.04 and t_dif>=0.0003:
                     if loc_his[0] != "himanshu":
-                        print("r2l",t_dif)
+                        print("Left to Right")
                         p.press("left")
                     loc_his[0] = loc
                     loc_his[1] = t_his
