@@ -15,8 +15,8 @@ while True:
     cv.imshow("Frame",frame)
     # loc_his ="himanshu"
     if hands:
+        # print("aaaaa")
         hand1 = hands[0]
-
         xcor = hand1["center"][0]
         #loc_his ="himanshu"
         t_his = t.time()/0.01
@@ -25,36 +25,43 @@ while True:
             loc = "left"
             t_dif = (t.time()/0.01)- t_his
             if loc != loc_his[0]:
-                if t_dif <=2 and t_dif>=0.0003:
-                    print("l2r",t_dif)
-                    p.press("right")
+                if t_dif <=0.04 and t_dif>=0.0003:
+                    if loc_his[0] != "himanshu":
+                        print("l2r",t_dif)
+                        p.press("right")
                     loc_his[0] = loc
-                    loc_his[1] = loc_his
+                    loc_his[1] = t_his
+                print(t_dif)
             else:
-                if t_dif >2:
-                    print("r2l2",t_dif)
-                    p.press("left")
-                    loc_his[0] = loc
+                if t_dif >0.04:
+                    if loc_his[0] != "himanshu":
+                        print("r2l2",t_dif)
+                        p.press("left")
+                    loc_his[0] = "loc"
                     loc_his[1] = t_his
         elif xcor>250:
             loc="right"
             t_dif = (t.time()/0.01)- t_his
             if loc != loc_his[0]:
-                if t_dif <=2 and t_dif>=0.0003:
-                    print("r2l",t_dif)
-                    p.press("left")
+                if t_dif <=0.04 and t_dif>=0.0003:
+                    if loc_his[0] != "himanshu":
+                        print("r2l",t_dif)
+                        p.press("left")
                     loc_his[0] = loc
                     loc_his[1] = t_his
             else:
-                if t_dif >2:
-                    print("l2r2",t_dif)
-                    p.press("right")
-                    loc_his[0] = loc
+                if t_dif >0.04:
+                    if loc_his[0] != "himanshu":
+                        print("l2r2",t_dif)
+                        p.press("right")
+                    loc_his[0] = "loc"
                     loc_his[1] = t_his
         else:
             continue
         #print(xcor,loc,loc_his)
     key = cv.waitKey(1)
+    if not hands:
+        loc_his[0] = "himanshu"
     if key == ord('x'):
         break
 video.release()
