@@ -28,7 +28,7 @@ while True:
                 if t_dif <=0.04 and t_dif>=0.0003:
                     if loc_his[0] != "himanshu":
                         print("Right to Left")
-                        p.press("right")
+                        p.press("left")
                     loc_his[0] = loc
                     loc_his[1] = t_his
                 #print(t_dif)
@@ -36,7 +36,7 @@ while True:
                 if t_dif >0.04:
                     if loc_his[0] != "himanshu":
                         print("r2l2",t_dif)
-                        p.press("left")
+                        p.press("right")
                     loc_his[0] = "loc"
                     loc_his[1] = t_his
         elif xcor>250:
@@ -46,14 +46,14 @@ while True:
                 if t_dif <=0.04 and t_dif>=0.0003:
                     if loc_his[0] != "himanshu":
                         print("Left to Right")
-                        p.press("left")
+                        p.press("right")
                     loc_his[0] = loc
                     loc_his[1] = t_his
             else:
                 if t_dif >0.04:
                     if loc_his[0] != "himanshu":
                         print("l2r2",t_dif)
-                        p.press("right")
+                        p.press("left")
                     loc_his[0] = "loc"
                     loc_his[1] = t_his
         else:
