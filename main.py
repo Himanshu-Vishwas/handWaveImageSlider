@@ -9,11 +9,16 @@ detector = HandDetector(detectionCon=0.8, maxHands=1)
 video = cv.VideoCapture(0)
 history = ["himanshu",int(t.time())]
 
+
+#welcome
+print("\n\n\tHAND WAVE SLIDER\n\twave your hand right or left in front of camera to press \"right\" or \"left\".\n")
+
+#final output code
 def final(loc,tdif):
     if loc != history[0]:
                 if tdif <=0.04 and tdif>=0.0003:
                     if history[0] != "himanshu":
-                        print(history[0]," to ",loc)
+                        print(history[0],"to",loc)
                         p.press(loc)
                     history[0] = loc
                     history[1] = tdif
@@ -46,10 +51,13 @@ while True:
             
         else:
             continue
-    key = cv.waitKey(1)
+
     if not hands:
         history[0] = "himanshu"
 
+
+#to close
+    key = cv.waitKey(1)
     if key == ord('x'):
         break
 
