@@ -3,7 +3,7 @@ Opencv-python project
 
 open main.py
 
-libraries you need to install:
+libraries you need to have:
 
 cvzone
 cv2
